@@ -15,6 +15,7 @@ public class Camera : MonoBehaviour
         //Initialize vars
         tr.Rotate(new Vector3(30.0f, 0.0f, 0.0f));
 
+
         //get components
 
         tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position),tr.rotation);  
