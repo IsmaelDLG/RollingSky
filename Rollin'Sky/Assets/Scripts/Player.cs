@@ -1,19 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
 
 public class Player : MonoBehaviour
 {
-    public const float MAX_SPEED = 10.0f;
-    public const float NORMAL_SPEED = 5.0f;
-    public const float MIN_SPEED = 1.0f;
+    public const float MAX_SPEED = 0.75f;
+    public const float NORMAL_SPEED = MAX_SPEED/2.0f;
+    public const float MIN_SPEED = MAX_SPEED/MAX_SPEED;
 
     private Rigidbody rb;
     private Transform tr;
 
     private Vector3 speed;
-    private Vector3 accelertion;
-
    
-
     // Start is called before the first frame update
     public void Start()
     {
@@ -25,9 +24,7 @@ public class Player : MonoBehaviour
         //Inicialitzo aquests components
         tr.SetPositionAndRotation(new Vector3(0, 2, 1), tr.rotation);
         rb.useGravity = true;
-
-        //Acceleracio hardcoded
-        accelertion = new Vector3(0.0f, 0.0f, 0.25f);
+        rb.mass = 0.1f;
 
         //Velocitat inicial
         speed = new Vector3(0.0f, 0.0f, MIN_SPEED);
@@ -37,32 +34,44 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        //Calcul de velocitat puntual en l'eix z (v + v*a);
-        speed = speed + new Vector3(speed.x * accelertion.x * Time.deltaTime,
-            speed.y * accelertion.y * Time.deltaTime, speed.z * accelertion.z * Time.deltaTime);
-       
-        //Ajustament de velocitat en eix z
-        if (speed.z > NORMAL_SPEED) speed.z = MAX_SPEED;
-
+        //Acceleració constant fins arribar al limit
+        accelerateZ();
+        
         //Calcul de vel en eix x
         if (Input.GetKey(KeyCode.RightArrow))
-        {
-            speed += new Vector3(0.05f, 0.0f, 0.0f);
-            Debug.Log("Right Arrow pressed!");
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            speed += new Vector3(-0.05f, 0.0f, 0.0f);
-            Debug.Log("Left Arrow pressed!");
-        }
+            this.accelerateX(1.0f);
+        else if (Input.GetKey(KeyCode.LeftArrow)) 
+            this.accelerateX(-1.0f);
+        else 
+            speed.x = 0.0f;    //desacelera
 
         rb.AddForce(speed);
     }
 
-    //My methods
+    //vf = vo + a*t
 
-    public Vector3 getPosition()
+    private void accelerateZ()
     {
-        return tr.position;
+        //Calcul de velocitat puntual en l'eix z (v + v*a);
+        speed.z += 3.0f * Time.deltaTime;
+
+        //Ajustament de velocitat en eix z
+        if (speed.z > NORMAL_SPEED) speed.z = MAX_SPEED;
     }
+
+    private void accelerateX(float dir)
+    {
+        if (dir != (speed.x / abs(speed.x))) speed.x = 0.0f;
+        speed.x += 500.0f * Time.deltaTime*dir;
+        if (speed.x > MAX_SPEED*5) speed.x = MAX_SPEED*5;
+        else if (speed.x < MAX_SPEED * (-5)) speed.x = MAX_SPEED * (-5);
+    }
+
+    private float abs(float x)
+    {
+        if (x < 0) return (x * -1.0f);
+        return x;
+    }
+
+    //My methods
 }
