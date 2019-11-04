@@ -42,14 +42,19 @@ public class Player : MonoBehaviour
             this.accelerateX(1.0f);
         else if (Input.GetKey(KeyCode.LeftArrow)) 
             this.accelerateX(-1.0f);
-        else 
-            speed.x = 0.0f;    //desacelera
-
+        else //Volem seguir rectes
+        {
+            //Contrarrestem la força actual
+            if (rb.velocity.x != 0)
+            {
+                speed.x = rb.velocity.x * (-1.0f);
+            }
+        }
+        //Afegim la força al player.
         rb.AddForce(speed);
     }
 
     //vf = vo + a*t
-
     private void accelerateZ()
     {
         //Calcul de velocitat puntual en l'eix z (v + v*a);
