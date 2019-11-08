@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
 
         //Inicialitzo aquests components
-        tr.SetPositionAndRotation(new Vector3(0, 2, 1), tr.rotation);
+        tr.SetPositionAndRotation(new Vector3(0, 2, 3), tr.rotation);
         rb.useGravity = true;
         rb.mass = 0.1f;
 
