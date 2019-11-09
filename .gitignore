@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-Rollin'Sky/[Ll]ibrary/
-Rollin'Sky/[Tt]emp/
-Rollin'Sky/Rollin'Sky/[Oo]bj/
-Rollin'Sky/[Bb]uild/
-Rollin'Sky/[Bb]uilds/
-Rollin'Sky/[Ll]ogs/
-Rollin'Sky/[Mm]emoryCaptures/
+Rollin\'Sky/[Ll]ibrary/
+Rollin\'Sky/[Tt]emp/
+Rollin\'Sky/Rollin'Sky/[Oo]bj/
+Rollin\'Sky/[Bb]uild/
+Rollin\'Sky/[Bb]uilds/
+Rollin\'Sky/[Ll]ogs/
+Rollin\'Sky/[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
