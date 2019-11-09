@@ -162,7 +162,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 17.5
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -258,6 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pc: {fileID: 1353184902}
+  cam: {fileID: 0}
+  tiles: []
 --- !u!1001 &6172806182754919343
 PrefabInstance:
   m_ObjectHideFlags: 0
