@@ -2,6 +2,10 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+# homemade
+\Rollin'Sky\Library\
+
+
 Rollin\'Sky/[Ll]ibrary/
 Rollin\'Sky/[Tt]emp/
 Rollin\'Sky/Rollin'Sky/[Oo]bj/
