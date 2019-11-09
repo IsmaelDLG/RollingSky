@@ -3,7 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 
-Rollin'Sky/Library/
+Rollin\'Sky/Library/
 /Temp/
 /Obj/
 /Build/
