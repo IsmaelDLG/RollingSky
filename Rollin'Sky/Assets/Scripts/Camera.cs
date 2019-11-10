@@ -15,7 +15,6 @@ public class Camera : MonoBehaviour
         //Initialize vars
         tr.Rotate(new Vector3(30.0f, 0.0f, 0.0f));
 
-
         //get components
 
         tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position),tr.rotation);  
@@ -30,7 +29,7 @@ public class Camera : MonoBehaviour
     //My methods
     public Vector3 watchPlayer(Vector3 playerPos)
     {
-        return playerPos + new Vector3(0.0f, 5.0f, -4.5f);
+        return playerPos + new Vector3(0.0f, 4.0f, -4.5f);
     }
 
 }
