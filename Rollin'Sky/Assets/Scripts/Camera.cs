@@ -29,7 +29,7 @@ public class Camera : MonoBehaviour
     //My methods
     public Vector3 watchPlayer(Vector3 playerPos)
     {
-        return playerPos + new Vector3(0.0f, 5.0f, -4.5f);
+        return playerPos + new Vector3(0.0f, 4.0f, -4.5f);
     }
 
 }

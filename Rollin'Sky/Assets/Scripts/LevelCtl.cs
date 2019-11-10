@@ -12,23 +12,31 @@ public class LevelCtl : MonoBehaviour
 
 
     public List<GameObject> tiles;
-    public List<GameObject[]> obstacles;
+    public List<GameObject> obstacles;
 
-    string[] level;
-    int width;
-    int count;
+    string[][] level;
+    int currentRow;
     // Start is called before the first frame update
+
     void Start()
     {
         this.transform.SetPositionAndRotation(cam.transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
         //Llegeixo el meu nivell
         string mypath = Application.dataPath + path;
         string file = File.ReadAllText(mypath);
-        int rows = file.Split(';').Length;
-        /*
+        string [] lvlRows = file.Split(';');
+        int count = 0;
+        level = new string[lvlRows.Length][];
+        foreach(string row in lvlRows)
+        {
+            Debug.Log(row);
+           level[count] = row.Split(',');
+           count++;
+        }
+        
         //Carrego els tiles disponibles
         GameObject myTile = new GameObject();
-        for (int it = 0; myTile != null; it++)
+        for (int it = 0; it < 1 ; it++)
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Tile_" + it.ToString());
@@ -37,23 +45,42 @@ public class LevelCtl : MonoBehaviour
 
         //Carrego els obstacles disponibles
         GameObject myObstacle = new GameObject();
-        for (int it = 0; myObstacle != null; it++)
+        for (int it = 0; it < 0; it++)
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Obstacle_" + it.ToString());
             tiles.Add(myTile);
         }
-        */
-        count = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (count < 200) { 
-            GameObject obj = (GameObject)Instantiate(GameObject.Find("TileTest"), new Vector3(0.0f,1, count), transform.rotation);
-            obj.transform.parent = transform;
-            ++count;
+        if (currentRow < level.Length)
+        {
+            while (inViewRange()) {
+                for (int j = 0; j < 5; j++)
+                {
+                    //get tile
+                    int tile = level[currentRow][j][0] - '0';
+                    if (tile != 0)
+                    {
+                        GameObject obj = (GameObject)Instantiate(tiles[tile-1], new Vector3(-2.50f+j, 1, currentRow), transform.rotation);
+                        obj.transform.parent = transform;
+                    }
+                }
+                currentRow++;
+            }
         }
+    }
+
+    bool inViewRange()
+    {
+
+        float zNear = 0.3f;
+        float zFar = 17.5f;
+
+        return (currentRow >= cam.transform.position.z + zNear) && (currentRow < cam.transform.position.z + zFar);
     }
 }

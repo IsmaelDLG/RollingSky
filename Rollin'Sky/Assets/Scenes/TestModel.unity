@@ -163,7 +163,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 17.5
-  field of view: 60
+  field of view: 35
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -258,8 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pc: {fileID: 1353184902}
-  cam: {fileID: 0}
+  cam: {fileID: 534669902}
   tiles: []
+  obstacles: []
 --- !u!1001 &6172806182754919343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,6 +328,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6172806184103761189, guid: 310c5127934671e4ab7f0031ec796714,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172806184103761189, guid: 310c5127934671e4ab7f0031ec796714,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172806184103761189, guid: 310c5127934671e4ab7f0031ec796714,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 310c5127934671e4ab7f0031ec796714, type: 3}
 --- !u!1001 &6223799010357380666
@@ -339,7 +355,7 @@ PrefabInstance:
     - target: {fileID: 6223799010824485846, guid: 505d7aac31d8999419e347573af29207,
         type: 3}
       propertyPath: m_Name
-      value: TileTest
+      value: Tile_0
       objectReference: {fileID: 0}
     - target: {fileID: 6223799010824485834, guid: 505d7aac31d8999419e347573af29207,
         type: 3}
@@ -395,6 +411,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223799010824485834, guid: 505d7aac31d8999419e347573af29207,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223799010824485834, guid: 505d7aac31d8999419e347573af29207,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 505d7aac31d8999419e347573af29207, type: 3}
