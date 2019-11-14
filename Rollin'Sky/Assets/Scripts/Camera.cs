@@ -17,7 +17,6 @@ public class Camera : MonoBehaviour
 
 
         //get components
-
         tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position),tr.rotation);  
     }
 

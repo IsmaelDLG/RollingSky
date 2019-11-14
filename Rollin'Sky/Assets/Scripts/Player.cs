@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         speed.z += 3.0f * Time.deltaTime;
 
         //Ajustament de velocitat en eix z
-        if (speed.z > NORMAL_SPEED) speed.z = MAX_SPEED;
+        if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
     }
 
     private void accelerateX(float dir)
