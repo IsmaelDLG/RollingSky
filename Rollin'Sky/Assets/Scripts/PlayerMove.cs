@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     public const float NORMAL_SPEED = MAX_SPEED/2.0f;
     public const float MIN_SPEED = MAX_SPEED/MAX_SPEED;
 
-    private Rigidbody rb;
+    //private Rigidbody rb;
     private Transform tr;
 
     private Vector3 speed;
@@ -19,12 +19,10 @@ public class PlayerMove : MonoBehaviour
 
         //Agafo els components que te el player
         tr = this.transform;
-        rb = this.GetComponent<Rigidbody>();
+        //rb = this.GetComponent<Rigidbody>();
 
         //Inicialitzo aquests components
-        tr.SetPositionAndRotation(new Vector3(0, 2, 3), tr.rotation);
-        rb.useGravity = true;
-        rb.mass = 0.1f;
+        tr.SetPositionAndRotation(new Vector3(0, 1.4f, 2), tr.rotation);
 
         //Velocitat inicial
         speed = new Vector3(0.0f, 0.0f, MIN_SPEED);
@@ -34,6 +32,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        tr.SetPositionAndRotation(tr.position + new Vector3(0.0f, 0.0f, 2 * 3.14159f * 0.25f*Time.deltaTime), tr.rotation);
+       /*
         //Acceleració constant fins arribar al limit
         accelerateZ();
         
@@ -52,6 +52,7 @@ public class PlayerMove : MonoBehaviour
         }
         //Afegim la força al player.
         rb.AddForce(speed);
+        */
     }
 
     //vf = vo + a*t
