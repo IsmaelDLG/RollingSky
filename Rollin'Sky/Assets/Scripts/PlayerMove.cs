@@ -7,8 +7,9 @@ public class PlayerMove : MonoBehaviour
     public const float MAX_SPEED = 0.75f;
     public const float NORMAL_SPEED = MAX_SPEED/2.0f;
     public const float MIN_SPEED = MAX_SPEED/MAX_SPEED;
+    public const float LONG = 2 * 3.14159f * 0.25f;
 
-    //private Rigidbody rb;
+    private Rigidbody rb;
     private Transform tr;
 
     private Vector3 speed;
@@ -16,13 +17,15 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        //tr.SetPositionAndRotation(new Vector3(0, 1.4f, 2), new Quaternion(0,0,0,0));
 
         //Agafo els components que te el player
         tr = this.transform;
-        //rb = this.GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody>();
 
         //Inicialitzo aquests components
-        tr.SetPositionAndRotation(new Vector3(0, 1.4f, 2), tr.rotation);
+        tr.Rotate(new Vector3(0, 90, 0));
+        tr.SetPositionAndRotation(new Vector3(0, 1.4f, 2),tr.rotation) ;
 
         //Velocitat inicial
         speed = new Vector3(0.0f, 0.0f, MIN_SPEED);
@@ -32,8 +35,24 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        tr.SetPositionAndRotation(tr.position + new Vector3(0.0f, 0.0f, 2 * 3.14159f * 0.25f*Time.deltaTime), tr.rotation);
-       /*
+        {/*
+        Vector3 mov = new Vector3(0.0f, 0.0f, LONG * Time.deltaTime * 2);
+        Quaternion rot = new Quaternion();
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            mov.x += LONG * Time.deltaTime;
+            if (tr.rotation.y == 90) rot.Rotate(new Vector3(0, 0, 45));
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            mov.x -= LONG * Time.deltaTime;
+            if (tr.rotation.y == 90) rot.Rotate(new Vector3(0, 0, -45));
+        }
+        else rot = 
+            
+        tr.SetPositionAndRotation(tr.position + mov, tr.rotation);
+        */
+        }
         //Acceleració constant fins arribar al limit
         accelerateZ();
         
@@ -52,7 +71,7 @@ public class PlayerMove : MonoBehaviour
         }
         //Afegim la força al player.
         rb.AddForce(speed);
-        */
+
     }
 
     //vf = vo + a*t
@@ -62,15 +81,15 @@ public class PlayerMove : MonoBehaviour
         speed.z += 3.0f * Time.deltaTime;
 
         //Ajustament de velocitat en eix z
-        if (speed.z > NORMAL_SPEED) speed.z = MAX_SPEED;
+        if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
     }
 
     private void accelerateX(float dir)
     {
         if (dir != (speed.x / abs(speed.x))) speed.x = 0.0f;
         speed.x += 500.0f * Time.deltaTime*dir;
-        if (speed.x > MAX_SPEED*5) speed.x = MAX_SPEED*5;
-        else if (speed.x < MAX_SPEED * (-5)) speed.x = MAX_SPEED * (-5);
+        if (speed.x > MAX_SPEED*5) speed.x = NORMAL_SPEED*5;
+        else if (speed.x < MAX_SPEED * (-5)) speed.x = NORMAL_SPEED * (-5);
     }
 
     private float abs(float x)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312, g: 0.38074034, b: 0.35872734, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5573ce18fb7f54dbe08e623e28091b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pc: {fileID: 2117756508}
---- !u!1001 &1466066930
+  pc: {fileID: 1036784156}
+--- !u!1001 &1036784155
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -265,6 +265,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494878af5f9f5b54eb2de2b371565e78, type: 3}
+--- !u!1 &1036784156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: 494878af5f9f5b54eb2de2b371565e78,
+    type: 3}
+  m_PrefabInstance: {fileID: 1036784155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1036784157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036784156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f365cf9b70d937b419b55fb2ad520592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1036784158
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036784156}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &1036784159
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036784156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.275
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1560235558
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,24 +359,6 @@ MonoBehaviour:
   tiles: []
   obstacles: []
   objOnScreen: []
---- !u!1 &2117756508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100008, guid: 494878af5f9f5b54eb2de2b371565e78,
-    type: 3}
-  m_PrefabInstance: {fileID: 1466066930}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2117756509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117756508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f365cf9b70d937b419b55fb2ad520592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6223799010357380666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,6 +370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223799010824485846, guid: 505d7aac31d8999419e347573af29207,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6223799010824485834, guid: 505d7aac31d8999419e347573af29207,
         type: 3}
