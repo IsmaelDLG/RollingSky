@@ -6,7 +6,7 @@ using System.IO;
 
 public class LevelCtl : MonoBehaviour
 {
-    public const string path = "/Scripts/LevelMap/test_0.txt";
+    public const string path = "/LevelMap/test_0.txt";//"/Scripts/LevelMap/test_0.txt";
     public GameObject cam;
 
 
@@ -22,7 +22,7 @@ public class LevelCtl : MonoBehaviour
     {
         this.transform.SetPositionAndRotation(new Vector3(0.0f,0.0f,0.0f), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
         //Llegeixo el meu nivell
-        string mypath = Application.dataPath + path;
+        string mypath = Application.streamingAssetsPath + path;
         string file = File.ReadAllText(mypath);
         string [] lvlRows = file.Split(';');
         int count = 0;
