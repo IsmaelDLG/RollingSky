@@ -32,10 +32,9 @@ public class LevelCtl : MonoBehaviour
            level[count] = row.Split(',');
            count++;
         }
-        
+        GameObject myTile = null;
         //Carrego els tiles disponibles
-        GameObject myTile = new GameObject();
-        for (int it = 0; it < 1 ; it++)
+        for (int it = 0; it < 5*3 ; it++)
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Tile_" + it.ToString());
@@ -44,7 +43,8 @@ public class LevelCtl : MonoBehaviour
 
         //Carrego els obstacles disponibles
         GameObject myObstacle = new GameObject();
-        for (int it = 0; it < 0; it++)
+        //5 tiles diferents per cada nivell
+        for (int it = 0; it < 5*3; it++)
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Obstacle_" + it.ToString());
@@ -54,6 +54,7 @@ public class LevelCtl : MonoBehaviour
     }
 
     // Update is called once per frame
+    //5 obstacles diferents per cada nivell
     void Update()
     {
         //create objects
