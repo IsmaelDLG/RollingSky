@@ -48,7 +48,8 @@ public class LevelCtl : MonoBehaviour
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Obstacle_" + it.ToString());
-            tiles.Add(myTile);
+            if (myTile != null) Debug.Log("M'han trobat!");
+            obstacles.Add(myObstacle);
         }
         
     }
@@ -64,12 +65,24 @@ public class LevelCtl : MonoBehaviour
                 for (int j = 0; j < 5; j++)
                 {
                     //crate tile
-                    int tile = level[currentRow][j][0] - '0';
-                    if (tile != 0)
+                    int tile_id = level[currentRow][j][0] - '0';
+                    if (tile_id != 0)
                     {
-                        GameObject obj = (GameObject)Instantiate(tiles[tile-1], new Vector3(level[currentRow].Length/(-2.0f)+j, 1, currentRow), transform.rotation);
+                        GameObject obj = (GameObject)Instantiate(tiles[tile_id-1], new Vector3(level[currentRow].Length/(-2.0f)+j, 1, currentRow), transform.rotation);
                         obj.transform.parent = transform;
                         objOnScreen.Add(obj);
+                        //per carregar l'obstacle del tile
+                        if (level[currentRow][j].Length > 2 && level[currentRow][j][1] == '.')
+                        {
+                            Debug.Log("M'han usat, yay!");
+                            int obs_id = level[currentRow][j][2] - '0';
+                            GameObject obs = (GameObject)Instantiate(obstacles[obs_id - 1], 
+                                new Vector3(level[currentRow].Length / (-2.0f) + j, 3.0f, currentRow), 
+                                transform.rotation);
+                            obs.transform.parent = transform;
+
+                            objOnScreen.Add(obs);
+                        }
                     }
                     //create obstacle
                     //to be done...
