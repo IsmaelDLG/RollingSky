@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
     public const float MIN_SPEED = MAX_SPEED/MAX_SPEED;
     public const float LONG = 2 * 3.14159f * 0.25f;
 
+    public bool accelerated = false;
+    public bool slowed = false;
+
     private Rigidbody rb;
     private Transform tr;
 
@@ -70,26 +73,51 @@ public class PlayerMove : MonoBehaviour
             }
         }
         //Afegim la força al player.
-        rb.AddForce(speed);
+        if(Time.timeScale != 0) rb.AddForce(speed);
 
+    }
+
+    public void accelerate()
+    {
+        accelerated = true;
+        speed.z = MAX_SPEED;
+    }
+
+    public void slow()
+    {
+        slowed = true;
+        speed.z = MIN_SPEED;
     }
 
     //vf = vo + a*t
     private void accelerateZ()
     {
-        //Calcul de velocitat puntual en l'eix z (v + v*a);
-        speed.z += 3.0f * Time.deltaTime;
+        if (accelerated)
+        {
+            if (speed.z > NORMAL_SPEED) speed.z -= 1.0f * Time.deltaTime;
+            if (speed.z <= NORMAL_SPEED) accelerated = false;
+        }
+        else if (slowed)
+        {
+            if(speed.z < NORMAL_SPEED) speed.z += 1.0f * Time.deltaTime;
+            if (speed.z >= NORMAL_SPEED) slowed = false;
+        }
+        else
+        {
+            //Calcul de velocitat puntual en l'eix z (v + v*a);
+            speed.z += 3.0f * Time.deltaTime;
 
-        //Ajustament de velocitat en eix z
-        if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
+            //Ajustament de velocitat en eix z
+            if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
+        }
     }
 
     private void accelerateX(float dir)
     {
         if (dir != (speed.x / abs(speed.x))) speed.x = 0.0f;
         speed.x += 500.0f * Time.deltaTime*dir;
-        if (speed.x > MAX_SPEED*5) speed.x = NORMAL_SPEED*5;
-        else if (speed.x < MAX_SPEED * (-5)) speed.x = NORMAL_SPEED * (-5);
+        if (speed.x > NORMAL_SPEED*5) speed.x = NORMAL_SPEED*5;
+        else if (speed.x < NORMAL_SPEED * (-5)) speed.x = NORMAL_SPEED * (-5);
     }
 
     private float abs(float x)

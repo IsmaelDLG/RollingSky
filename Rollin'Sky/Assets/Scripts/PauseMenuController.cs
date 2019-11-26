@@ -21,6 +21,7 @@ public class PauseMenuController : MonoBehaviour
                 Pause();
             }
         }
+        Debug.Log(IsPaused);
     }
     public void Resume()
     {
