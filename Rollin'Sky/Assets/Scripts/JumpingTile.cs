@@ -7,7 +7,7 @@ public class JumpingTile : MonoBehaviour
 
     private bool jump = false;
     private bool retracted = false;
-    private float jumpSpeed = 10;
+    private float jumpSpeed = 8;
     private Vector3 restPosition;
     private Vector3 retractPosition;
     private Vector3 activatedPosition;
