@@ -1,35 +1,9 @@
 fileFormatVersion: 2
-guid: 5cef9e1797a3d4b41acd0706623aae53
+guid: 78d48ec35304a6b4c9ce06cc2baa2bde
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Armature
-    100002: BackCover
-    100004: BackDeco
-    100006: BackDeco_end
-    100008: //RootNode
-    100010: FrontCover
-    100012: FrontDeco
-    100014: FrontDeco_end
-    100016: Main
-    100018: Sphere
-    400000: Armature
-    400002: BackCover
-    400004: BackDeco
-    400006: BackDeco_end
-    400008: //RootNode
-    400010: FrontCover
-    400012: FrontDeco
-    400014: FrontDeco_end
-    400016: Main
-    400018: Sphere
-    2100000: No Name
-    2100002: Material
-    4300000: Sphere
-    7400000: Armature|Jump
-    7400002: Armature|Roll
-    9500000: //RootNode
-    13700000: Sphere
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -82,8 +56,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
