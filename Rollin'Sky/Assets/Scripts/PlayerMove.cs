@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public const float MAX_SPEED = 0.75f;
+    public const float MAX_SPEED = 1.0f;//0.75f;
     public const float NORMAL_SPEED = MAX_SPEED/2.0f;
-    public const float MIN_SPEED = MAX_SPEED/MAX_SPEED;
+    public const float MIN_SPEED = NORMAL_SPEED/2.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
+
+    public bool accelerated = false;
+    public bool slowed = false;
 
     private Rigidbody rb;
     private Transform tr;
@@ -28,7 +31,7 @@ public class PlayerMove : MonoBehaviour
         tr.SetPositionAndRotation(new Vector3(0, 1.4f, 2),tr.rotation) ;
 
         //Velocitat inicial
-        speed = new Vector3(0.0f, 0.0f, MIN_SPEED);
+        speed = new Vector3(0.0f, 0.0f, NORMAL_SPEED);
 
     }
 
@@ -77,14 +80,43 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+    public void accelerate()
+    {
+        accelerated = true;
+        speed.z = MAX_SPEED;
+        Debug.Log("accelerating player");
+    }
+
+    public void slow()
+    {
+        slowed = true;
+        speed.z = MIN_SPEED;
+    }
+
     //vf = vo + a*t
     private void accelerateZ()
     {
-        //Calcul de velocitat puntual en l'eix z (v + v*a);
-        speed.z += 3.0f * Time.deltaTime;
+        if (accelerated)
+        {
+            if (speed.z > NORMAL_SPEED) speed.z -= 0.75f * Time.deltaTime;
+            if (speed.z <= NORMAL_SPEED) accelerated = false;
 
-        //Ajustament de velocitat en eix z
-        if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
+        }
+        else if (slowed)
+        {
+            Debug.Log(speed.z);
+            if (speed.z < NORMAL_SPEED) speed.z += 0.75f * Time.deltaTime;
+            if (speed.z >= NORMAL_SPEED) slowed = false;
+            Debug.Log(speed.z);
+        }
+        else
+        {
+            //Calcul de velocitat puntual en l'eix z (v + v*a);
+            speed.z += 3.0f * Time.deltaTime;
+
+            //Ajustament de velocitat en eix z
+            if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
+        }
     }
 
     private void accelerateX(float dir)
