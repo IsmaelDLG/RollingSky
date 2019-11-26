@@ -105,7 +105,7 @@ public class PlayerMove : MonoBehaviour
         else if (slowed)
         {
             Debug.Log(speed.z);
-            if (speed.z < NORMAL_SPEED) speed.z += 0.75f * Time.deltaTime;
+            if (speed.z < NORMAL_SPEED) speed.z += 0.5f * Time.deltaTime;
             if (speed.z >= NORMAL_SPEED) slowed = false;
             Debug.Log(speed.z);
         }
