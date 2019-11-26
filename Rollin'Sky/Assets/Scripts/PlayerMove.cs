@@ -70,7 +70,10 @@ public class PlayerMove : MonoBehaviour
             }
         }
         //Afegim la força al player.
-        rb.AddForce(speed);
+        if (Time.timeScale != 0)
+        {
+            rb.AddForce(speed);
+        }
 
     }
 
