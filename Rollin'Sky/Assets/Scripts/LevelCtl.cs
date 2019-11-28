@@ -24,6 +24,7 @@ public class LevelCtl : MonoBehaviour
         //Llegeixo el meu nivell
         string mypath = Application.streamingAssetsPath + path;
         string file = File.ReadAllText(mypath);
+        file = file.Replace("\r\n", "");
         string [] lvlRows = file.Split(';');
         int count = 0;
         level = new string[lvlRows.Length][];

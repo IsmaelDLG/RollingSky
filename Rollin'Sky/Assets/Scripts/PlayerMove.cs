@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public const float MAX_SPEED = 0.75f;
+    public const float MAX_SPEED = 0.75f*2.0f;
     public const float NORMAL_SPEED = MAX_SPEED/2.0f;
     public const float MIN_SPEED = MAX_SPEED/MAX_SPEED;
     public const float LONG = 2 * 3.14159f * 0.25f;
