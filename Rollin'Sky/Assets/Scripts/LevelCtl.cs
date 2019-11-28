@@ -27,6 +27,7 @@ public class LevelCtl : MonoBehaviour
         string [] lvlRows = file.Split(';');
         int count = 0;
         level = new string[lvlRows.Length][];
+        currentRow = 0;
         foreach(string row in lvlRows)
         {
            level[count] = row.Split(',');
@@ -47,10 +48,10 @@ public class LevelCtl : MonoBehaviour
         for (int it = 0; it < 5*3; it++)
         {
             //find returns null if it couldn't find the obstacle
-            myTile = GameObject.Find("Obstacle_" + it.ToString());
-            if (myTile != null) Debug.Log("M'han trobat!");
+            myObstacle = GameObject.Find("Obstacle_" + it.ToString());
             obstacles.Add(myObstacle);
         }
+
         
     }
 
