@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool accelerated = false;
     public bool slowed = false;
+    private string element = "none";
 
     private Rigidbody rb;
     private Transform tr;
@@ -91,6 +92,12 @@ public class PlayerMove : MonoBehaviour
     {
         slowed = true;
         speed.z = MIN_SPEED;
+    }
+
+    public void changeElement(string elem)
+    {
+        element = elem;
+        Debug.Log(element);
     }
 
     //vf = vo + a*t
