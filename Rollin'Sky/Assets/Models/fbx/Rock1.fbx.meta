@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c7facf74a64b07e419995d774fadadc0
+=======
+guid: 19437e29d6e77824c9688178443bf6d6
+>>>>>>> tmp
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,9 +18,19 @@ ModelImporter:
     400006: Sun.001
     400008: Sun.002
     2100000: Material.001
+<<<<<<< HEAD
     2300000: Sphere
     3300000: Sphere
     4300000: Sphere
+=======
+    2100002: No Name
+    2300000: Sphere
+    2300002: //RootNode
+    3300000: Sphere
+    3300002: //RootNode
+    4300000: Sphere
+    4300002: Rock
+>>>>>>> tmp
     10800000: Sun
     10800002: Sun.001
     10800004: Sun.002
