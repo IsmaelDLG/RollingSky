@@ -7,7 +7,7 @@ public class JumpingTile : MonoBehaviour
 
     private bool jump = false;
     private bool retracted = false;
-    private float jumpSpeed = 8;
+    private float jumpSpeed = 7;//8;
     private Vector3 restPosition;
     private Vector3 retractPosition;
     private Vector3 activatedPosition;
@@ -16,7 +16,7 @@ public class JumpingTile : MonoBehaviour
     {
         restPosition = this.transform.position;
         retractPosition = restPosition - new Vector3(0.0f, 0.5f, 0.0f);
-        activatedPosition = restPosition + new Vector3(0.0f, 2.0f, 0.0f);
+        activatedPosition = restPosition + new Vector3(0.0f, 3.0f, 0.0f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,20 +48,31 @@ public class JumpingTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(retracted)
+
+        if (this.transform.position == retractPosition) retracted = false;
+        else if (this.transform.position.y >= activatedPosition.y-1.75)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, retractPosition, Time.deltaTime * jumpSpeed);
+            GameObject.Find("Ball").GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 5.0f, 0.0f));
+            jump = false;
+        }
+
+        Debug.Log(jump);
+
+        if (retracted)
+        {
+            this.transform.position = Vector3.Lerp(this.transform.position, 
+                retractPosition, Time.deltaTime * jumpSpeed);
         }
         if(jump)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, activatedPosition, Time.deltaTime * jumpSpeed);
+            this.transform.position = Vector3.Lerp(this.transform.position,
+                activatedPosition, Time.deltaTime * jumpSpeed);
         }
-        else
+        
+        if (this.transform.position != restPosition && !jump && !retracted)
         {
-            if (this.transform.position != restPosition)
-            {
-                this.transform.position = Vector3.Lerp(this.transform.position, restPosition, Time.deltaTime * jumpSpeed);
-            }
+            this.transform.position = Vector3.Lerp(this.transform.position,
+                restPosition, Time.deltaTime * jumpSpeed);
         }
     }
 }

@@ -1364,7 +1364,7 @@ PrefabInstance:
     - target: {fileID: 27717787205464466, guid: 7de7f29642ccfe243972d7cf97f3d9d7,
         type: 3}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de7f29642ccfe243972d7cf97f3d9d7, type: 3}
@@ -2329,6 +2329,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 569745683106041087, guid: 32f5a31f433aa27478c13331f755f232,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 569745683106041087, guid: 32f5a31f433aa27478c13331f755f232,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f5a31f433aa27478c13331f755f232, type: 3}
