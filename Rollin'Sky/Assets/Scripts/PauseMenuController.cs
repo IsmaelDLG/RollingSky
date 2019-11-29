@@ -21,6 +21,7 @@ public class PauseMenuController : MonoBehaviour
                 Pause();
             }
         }
+
     }
     public void Resume()
     {

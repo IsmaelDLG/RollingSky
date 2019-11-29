@@ -70,7 +70,9 @@ public class LevelCtl : MonoBehaviour
                     int tile_id = level[currentRow][j][0] - '0';
                     if (tile_id != 0)
                     {
-                        GameObject obj = (GameObject)Instantiate(tiles[tile_id-1], new Vector3(level[currentRow].Length/(-2.0f)+j, 1, currentRow), transform.rotation);
+                        GameObject obj = (GameObject)Instantiate(tiles[tile_id-1], 
+                            new Vector3(level[currentRow].Length/(-2.0f)+j, 1,
+                            currentRow), transform.rotation);
                         obj.transform.parent = transform;
                         objOnScreen.Add(obj);
                         //per carregar l'obstacle del tile
@@ -105,7 +107,7 @@ public class LevelCtl : MonoBehaviour
     bool inViewRange(float zPos)
     {
 
-        float zNear = 0.3f;
+        float zNear = 2.0f;
         float zFar = 17.5f;
 
         return (zPos >= cam.transform.position.z + zNear) && (zPos < cam.transform.position.z + zFar);

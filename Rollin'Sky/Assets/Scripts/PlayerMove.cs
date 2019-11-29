@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool accelerated = false;
     public bool slowed = false;
+    public bool isDead = false;
     private string element = "none";
 
     private Rigidbody rb;
@@ -27,10 +28,14 @@ public class PlayerMove : MonoBehaviour
         //Agafo els components que te el player
         tr = this.transform;
         rb = this.GetComponent<Rigidbody>();
-
-        //Inicialitzo aquests components
-        tr.Rotate(new Vector3(0, 90, 0));
-        tr.SetPositionAndRotation(new Vector3(0, 1.4f, 2),tr.rotation) ;
+        isDead = false;
+        accelerated = false;
+        slowed = false;
+        isDead = false;
+        Time.timeScale = 1f;
+    //Inicialitzo aquests components
+    //tr.Rotate(new Vector3(0, 90, 0));
+        tr.SetPositionAndRotation(new Vector3(0, 1.4f, 1),new Quaternion(0,0,0,0)) ;
 
         //Velocitat inicial
         speed = new Vector3(0.0f, 0.0f, NORMAL_SPEED);
@@ -40,24 +45,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        {/*
-        Vector3 mov = new Vector3(0.0f, 0.0f, LONG * Time.deltaTime * 2);
-        Quaternion rot = new Quaternion();
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            mov.x += LONG * Time.deltaTime;
-            if (tr.rotation.y == 90) rot.Rotate(new Vector3(0, 0, 45));
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            mov.x -= LONG * Time.deltaTime;
-            if (tr.rotation.y == 90) rot.Rotate(new Vector3(0, 0, -45));
-        }
-        else rot = 
-            
-        tr.SetPositionAndRotation(tr.position + mov, tr.rotation);
-        */
-        }
+        stillAlive();
         //Acceleració constant fins arribar al limit
         accelerateZ();
         
@@ -99,6 +87,14 @@ public class PlayerMove : MonoBehaviour
     {
         element = elem;
         Debug.Log(element);
+    }
+
+    public void stillAlive()
+    {
+        if (tr.position.y <= -4)
+        {
+            isDead = true;
+        }
     }
 
     //vf = vo + a*t

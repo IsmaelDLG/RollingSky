@@ -6,15 +6,16 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     private Transform tr;
-    public GameObject pc;
+    private GameObject pc;
 
     // Start is called before the first frame update
     public void Start()
     {
         tr = GetComponent<Transform>();
         //Initialize vars
-        tr.Rotate(new Vector3(30.0f, 0.0f, 0.0f));
+        tr.Rotate(new Vector3(20.0f, 0.0f, 0.0f));
 
+        pc = GameObject.Find("Ball");
         //get components
 
         tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position),tr.rotation);  
@@ -29,7 +30,7 @@ public class Camera : MonoBehaviour
     //My methods
     public Vector3 watchPlayer(Vector3 playerPos)
     {
-        return playerPos + new Vector3(0.0f, 4.0f, -4.5f);
+        return new Vector3(playerPos.x, 0.0f, playerPos.z) + new Vector3(0.0f, 4.0f, -4.5f);
     }
 
 }
