@@ -1,29 +1,16 @@
 fileFormatVersion: 2
-guid: 33595a2634369914d963285097961299
+guid: 2ac161639a182cd4b811a543362e1931
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Hammer_Base
-    100004: Hammer_Head
-    100006: Hammer_Stick
     400000: //RootNode
-    400002: Hammer_Base
-    400004: Hammer_Head
-    400006: Hammer_Stick
-    2100000: Material
-    2300000: Hammer_Base
-    2300002: Hammer_Head
-    2300004: Hammer_Stick
-    2300006: //RootNode
-    3300000: Hammer_Base
-    3300002: Hammer_Head
-    3300004: Hammer_Stick
-    3300006: //RootNode
-    4300000: Hammer_Base
-    4300002: Hammer_Head
-    4300004: Hammer_Stick
-    2186277476908879412: ImportLogs
+    2100000: Wood_
+    2100002: Rock
+    2100004: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Hammer_Base.001
   externalObjects: {}
   materials:
     importMaterials: 1
