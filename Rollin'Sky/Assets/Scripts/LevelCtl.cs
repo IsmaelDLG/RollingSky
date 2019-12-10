@@ -50,7 +50,7 @@ public class LevelCtl : MonoBehaviour
         //Carrego els obstacles disponibles
         GameObject myObstacle = new GameObject();
         //5 tiles diferents per cada nivell
-        for (int it = 0; it < 5*3; it++)
+        for (int it = 0; it < 6*3; it++)
         {
             //find returns null if it couldn't find the obstacle
             myObstacle = GameObject.Find("Obstacle_" + it.ToString());
