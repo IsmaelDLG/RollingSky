@@ -7,6 +7,6 @@ public class LevelMenuControler : MonoBehaviour
 {
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("TestModel");
+        SceneManager.LoadScene("Level1");
     }
 }

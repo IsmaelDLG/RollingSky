@@ -27,7 +27,8 @@ public class DeadCtrl : MonoBehaviour
     public void restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("TestModel");
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
 
 

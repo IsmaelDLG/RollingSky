@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class LevelCtl : MonoBehaviour
 {
-    public const string path = "/LevelMap/test_0.txt";//"/Scripts/LevelMap/test_0.txt";
+    
+    public string path = "/LevelMap/Level1.txt";//"/Scripts/LevelMap/test_0.txt";
     public GameObject cam;
 
 
@@ -20,9 +22,11 @@ public class LevelCtl : MonoBehaviour
 
     void Start()
     {
+        int nivell = SceneManager.GetActiveScene().buildIndex;
+        String levelpath = "/LevelMap/Level" + nivell.ToString() + ".txt";
         this.transform.SetPositionAndRotation(new Vector3(0.0f,0.0f,0.0f), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
         //Llegeixo el meu nivell
-        string mypath = Application.streamingAssetsPath + path;
+        string mypath = Application.streamingAssetsPath + levelpath;
         string file = File.ReadAllText(mypath);
         file = file.Replace("\r\n", "");
         string [] lvlRows = file.Split(';');
@@ -52,8 +56,8 @@ public class LevelCtl : MonoBehaviour
             myObstacle = GameObject.Find("Obstacle_" + it.ToString());
             obstacles.Add(myObstacle);
         }
+        Time.timeScale = 1f;
 
-        
     }
 
     // Update is called once per frame
@@ -64,7 +68,7 @@ public class LevelCtl : MonoBehaviour
         if (currentRow < level.Length)
         {
             while (inViewRange(currentRow)) {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 11; j++)
                 {
                     //crate tile
                     int tile_id = level[currentRow][j][0] - '0';

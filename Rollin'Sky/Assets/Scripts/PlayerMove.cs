@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    public const float MAX_SPEED = 0.75f*2.0f;
+    public const float MAX_SPEED = 1.0f*2.0f;
     public const float NORMAL_SPEED = MAX_SPEED/2.0f;
     public const float MIN_SPEED = NORMAL_SPEED/2.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
@@ -32,7 +32,6 @@ public class PlayerMove : MonoBehaviour
         accelerated = false;
         slowed = false;
         isDead = false;
-        Time.timeScale = 1f;
     //Inicialitzo aquests components
     //tr.Rotate(new Vector3(0, 90, 0));
         tr.SetPositionAndRotation(new Vector3(0, 1.4f, 1),new Quaternion(0,0,0,0)) ;
