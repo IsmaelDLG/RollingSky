@@ -15,9 +15,11 @@ ModelImporter:
     2300000: Hammer_Base
     2300002: Hammer_Head
     2300004: Hammer_Stick
+    2300006: //RootNode
     3300000: Hammer_Base
     3300002: Hammer_Head
     3300004: Hammer_Stick
+    3300006: //RootNode
     4300000: Hammer_Base
     4300002: Hammer_Head
     4300004: Hammer_Stick
