@@ -69,6 +69,11 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+    public void killPlayer()
+    {
+        isDead = true;
+    }
+
     public void accelerate()
     {
         accelerated = true;

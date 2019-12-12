@@ -21,5 +21,14 @@ public class MusciManager : MonoBehaviour
         {
             this.GetComponent<AudioSource>().volume = 0.025f;
         }
+
+        if (DeadCtrl.deathMenuActive)
+        {
+            this.GetComponent<AudioSource>().volume = 0.0025f;
+        }
+        else
+        {
+            this.GetComponent<AudioSource>().volume = 0.025f;
+        }
     }
 }

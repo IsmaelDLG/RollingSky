@@ -8,10 +8,12 @@ public class DeadCtrl : MonoBehaviour
 
     private GameObject player;
     public GameObject deathUI;
+    public static bool deathMenuActive;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Ball");
+        deathMenuActive = false;
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class DeadCtrl : MonoBehaviour
         {
             Time.timeScale = 0f;
             deathUI.SetActive(true);
+            deathMenuActive = true;
         }
     }
 
