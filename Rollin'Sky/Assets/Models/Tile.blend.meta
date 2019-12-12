@@ -1,38 +1,46 @@
 fileFormatVersion: 2
-guid: 39debe8dbc3a2d2418b1736f8ac6f0c3
+guid: 8cf310fc349ced7429e5cea8da33d5fa
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Hammer_Base
-    100004: Hammer_Head
-    100006: Bone
-    100008: Bone.001
-    100010: Bone.001_end
-    100012: Hammer_Arm
-    100014: Hammer
-    400000: //RootNode
-    400002: Hammer_Base
-    400004: Hammer_Head
-    400006: Bone
-    400008: Bone.001
-    400010: Bone.001_end
-    400012: Hammer_Arm
-    400014: Hammer
-    2100000: Wood_
-    2100002: Rock
-    2300000: //RootNode
-    2300002: Hammer_Base
-    2300004: Hammer_Head
-    2300006: Hammer
-    3300000: //RootNode
-    3300002: Hammer_Base
-    3300004: Hammer_Head
-    3300006: Hammer
-    4300000: Hammer_Base.001
-    4300002: Hammer_Head
-    4300004: Hammer_Base
-    4300006: Hammer
+    100000: Camera
+    100002: Cube
+    100004: Cube.001
+    100006: Cube.002
+    100008: Cube.003
+    100010: Cube.004
+    100012: Light
+    100014: //RootNode
+    400000: Camera
+    400002: Cube
+    400004: Cube.001
+    400006: Cube.002
+    400008: Cube.003
+    400010: Cube.004
+    400012: Light
+    400014: //RootNode
+    2000000: Camera
+    2100000: Material
+    2100002: Material.001
+    2100004: Material.002
+    2100006: Material.003
+    2100008: Material.004
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.003
+    2300008: Cube.004
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.003
+    3300008: Cube.004
+    4300000: Cube
+    4300002: Cube.001
+    4300004: Cube.002
+    4300006: Cube.003
+    4300008: Cube.004
+    10800000: Light
   externalObjects: {}
   materials:
     importMaterials: 1
