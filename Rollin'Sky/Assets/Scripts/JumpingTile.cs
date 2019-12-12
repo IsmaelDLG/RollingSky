@@ -52,7 +52,7 @@ public class JumpingTile : MonoBehaviour
         if (this.transform.position == retractPosition) retracted = false;
         else if (this.transform.position.y >= activatedPosition.y-1.75)
         {
-            GameObject.Find("Ball").GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, 0.0f));
+            //GameObject.Find("Ball").GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, 0.0f));
             jump = false;
         }
 
