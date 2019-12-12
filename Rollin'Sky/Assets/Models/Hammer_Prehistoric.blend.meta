@@ -4,12 +4,35 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Hammer_Base
+    100004: Hammer_Head
+    100006: Bone
+    100008: Bone.001
+    100010: Bone.001_end
+    100012: Hammer_Arm
+    100014: Hammer
     400000: //RootNode
+    400002: Hammer_Base
+    400004: Hammer_Head
+    400006: Bone
+    400008: Bone.001
+    400010: Bone.001_end
+    400012: Hammer_Arm
+    400014: Hammer
     2100000: Wood_
     2100002: Rock
     2300000: //RootNode
+    2300002: Hammer_Base
+    2300004: Hammer_Head
+    2300006: Hammer
     3300000: //RootNode
+    3300002: Hammer_Base
+    3300004: Hammer_Head
+    3300006: Hammer
     4300000: Hammer_Base.001
+    4300002: Hammer_Head
+    4300004: Hammer_Base
+    4300006: Hammer
   externalObjects: {}
   materials:
     importMaterials: 1
