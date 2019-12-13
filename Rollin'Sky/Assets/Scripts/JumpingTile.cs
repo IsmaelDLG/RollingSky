@@ -74,7 +74,6 @@ public class JumpingTile : MonoBehaviour
         {
             this.transform.position = Vector3.Lerp(this.transform.position,
                 restPosition, Time.deltaTime * jumpSpeed);
-            ball.GetComponent<PlayerMove>().jump();
         }
     }
 }

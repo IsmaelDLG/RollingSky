@@ -5,9 +5,9 @@ using UnityEngine;
 public class test_move : MonoBehaviour
 {
 
-    public const float MAX_SPEED = 0.75f * 2.0f;
-    public const float NORMAL_SPEED = MAX_SPEED / 2.0f;
-    public const float MIN_SPEED = NORMAL_SPEED / 2.0f;
+    public const float MAX_SPEED = 100.0f;
+    public const float NORMAL_SPEED = MAX_SPEED / 4.0f;
+    public const float MIN_SPEED = NORMAL_SPEED / 4.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
 
     public bool accelerated = false;
