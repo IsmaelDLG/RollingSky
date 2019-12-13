@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     public bool accelerated = false;
     public bool slowed = false;
     public bool isDead = false;
+    public bool isJumping = false;
     private string element = "none";
 
     private Rigidbody rb;
@@ -44,6 +45,10 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (tr.position.y <= 1.5f)
+        {
+            isJumping = false;
+        }
         stillAlive();
         //Acceleració constant fins arribar al limit
         accelerateZ();
@@ -64,14 +69,21 @@ public class PlayerMove : MonoBehaviour
         //Afegim la força al player.
         if (Time.timeScale != 0)
         {
-            rb.AddForce(speed);
+            if (isJumping)
+            {
+                rb.AddForce(speed.x, speed.y, 0f, ForceMode.Force);
+            } else
+            {
+                rb.AddForce(speed, ForceMode.Force);
+            }
         }
 
     }
 
     public void jump()
     {
-        rb.AddForce(new Vector3(0.0f, 750.0f, 0.0f));
+        isJumping = true;
+        rb.AddForce(new Vector3(0.0f, 40.0f, 0.0f), ForceMode.Impulse); //rb.AddForce(new Vector3(0.0f, 750.0f, 0.0f), ForceMode.Force);
     }
 
     public void killPlayer()
@@ -94,7 +106,6 @@ public class PlayerMove : MonoBehaviour
     public void changeElement(string elem)
     {
         element = elem;
-        Debug.Log(element);
     }
 
     public void stillAlive()

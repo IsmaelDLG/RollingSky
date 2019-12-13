@@ -54,7 +54,6 @@ public class LevelCtl : MonoBehaviour
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Variant_" + it.ToString());
-            Debug.Log(myTile != null);
             variants.Add(myTile);
         }
 

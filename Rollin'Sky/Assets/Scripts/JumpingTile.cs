@@ -38,7 +38,7 @@ public class JumpingTile : MonoBehaviour
 
     private void activateRetract()
     {
-        retracted = true;
+        //retracted = true;
     }
 
     private void activateJumper()
@@ -56,7 +56,6 @@ public class JumpingTile : MonoBehaviour
             jump = false;
         }
 
-        Debug.Log(jump);
 
         if (retracted)
         {
@@ -65,9 +64,9 @@ public class JumpingTile : MonoBehaviour
         }
         if(jump)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position,
-                activatedPosition, Time.deltaTime * jumpSpeed);
+            //this.transform.position = Vector3.Lerp(this.transform.position, activatedPosition, Time.deltaTime * jumpSpeed);
             ball.GetComponent<PlayerMove>().jump();
+            jump = false;
         }
 
         if (this.transform.position != restPosition && !jump && !retracted)
