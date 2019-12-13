@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
 
     public const float MAX_SPEED = NORMAL_SPEED *1.5f;
-    public const float NORMAL_SPEED = 60.0f;
+    public const float NORMAL_SPEED = 55.0f;
     public const float MIN_SPEED = NORMAL_SPEED/2.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
 
@@ -83,7 +83,6 @@ public class PlayerMove : MonoBehaviour
     {
         accelerated = true;
         speed.z = MAX_SPEED;
-        Debug.Log("accelerating player");
     }
 
     public void slow()
@@ -109,7 +108,13 @@ public class PlayerMove : MonoBehaviour
     //vf = vo + a*t
     private void accelerateZ()
     {
-        if (accelerated)
+        if (slowed && accelerated)
+        {
+            speed.z = NORMAL_SPEED;
+            accelerated = false;
+            slowed = false;
+        }
+        else if (accelerated)
         {
             if (speed.z > NORMAL_SPEED) speed.z -= 35.0f * Time.deltaTime;
             if (speed.z <= NORMAL_SPEED) accelerated = false;
@@ -117,10 +122,8 @@ public class PlayerMove : MonoBehaviour
         }
         else if (slowed)
         {
-            Debug.Log(speed.z);
             if (speed.z < NORMAL_SPEED) speed.z += 5.0f * Time.deltaTime;
             if (speed.z >= NORMAL_SPEED) slowed = false;
-            Debug.Log(speed.z);
         }
         else
         {
@@ -134,7 +137,11 @@ public class PlayerMove : MonoBehaviour
 
     private void accelerateX(float dir)
     {
-        if (dir != (speed.x / abs(speed.x))) speed.x = 0.0f;
+        if (dir != (speed.x / abs(speed.x)))
+        {
+            speed.x = 0.0f;
+            rb.velocity.Set(0.0f, rb.velocity.y, rb.velocity.z);
+        }
         speed.x += 500.0f * Time.deltaTime*dir;
         if (speed.x > MAX_SPEED*5) speed.x = NORMAL_SPEED*5;
         else if (speed.x < MAX_SPEED * (-5)) speed.x = NORMAL_SPEED * (-5);
