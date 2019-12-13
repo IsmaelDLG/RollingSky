@@ -46,13 +46,13 @@ public class test_move : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.RightArrow))
-            rb.AddForce(new Vector3(1f, 0, 0));
+            rb.AddForce(new Vector3(30f, 0, 0));
         else if (Input.GetKey(KeyCode.LeftArrow))
-            rb.AddForce(new Vector3(-1f, 0, 0));
+            rb.AddForce(new Vector3(-30f, 0, 0));
         else if (Input.GetKey(KeyCode.UpArrow))
-            rb.AddForce(new Vector3(0, 0, 1f));
+            rb.AddForce(new Vector3(0, 0, 30f));
         else if (Input.GetKey(KeyCode.DownArrow))
-            rb.AddForce(new Vector3(0, 0, -1f));
+            rb.AddForce(new Vector3(0, 0, -30f));
 
     }
 }

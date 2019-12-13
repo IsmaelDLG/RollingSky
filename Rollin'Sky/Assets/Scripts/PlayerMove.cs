@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    public const float MAX_SPEED = 100.0f;
-    public const float NORMAL_SPEED = MAX_SPEED/4.0f;
-    public const float MIN_SPEED = NORMAL_SPEED/4.0f;
+    public const float MAX_SPEED = NORMAL_SPEED *1.5f;
+    public const float NORMAL_SPEED = 60.0f;
+    public const float MIN_SPEED = NORMAL_SPEED/2.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
 
     public bool accelerated = false;
@@ -111,7 +111,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (accelerated)
         {
-            if (speed.z > NORMAL_SPEED) speed.z -= 25.0f * Time.deltaTime;
+            if (speed.z > NORMAL_SPEED) speed.z -= 35.0f * Time.deltaTime;
             if (speed.z <= NORMAL_SPEED) accelerated = false;
 
         }
