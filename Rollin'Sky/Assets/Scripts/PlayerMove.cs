@@ -71,7 +71,7 @@ public class PlayerMove : MonoBehaviour
 
     public void jump()
     {
-        rb.AddForce(new Vector3(0.0f, 1000.0f, 0.0f));
+        rb.AddForce(new Vector3(0.0f, 750.0f, 0.0f));
     }
 
     public void killPlayer()
@@ -111,14 +111,14 @@ public class PlayerMove : MonoBehaviour
     {
         if (accelerated)
         {
-            if (speed.z > NORMAL_SPEED) speed.z -= 0.2f * Time.deltaTime;
+            if (speed.z > NORMAL_SPEED) speed.z -= 25.0f * Time.deltaTime;
             if (speed.z <= NORMAL_SPEED) accelerated = false;
 
         }
         else if (slowed)
         {
             Debug.Log(speed.z);
-            if (speed.z < NORMAL_SPEED) speed.z += 0.5f * Time.deltaTime;
+            if (speed.z < NORMAL_SPEED) speed.z += 5.0f * Time.deltaTime;
             if (speed.z >= NORMAL_SPEED) slowed = false;
             Debug.Log(speed.z);
         }
