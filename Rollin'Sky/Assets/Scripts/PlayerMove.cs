@@ -45,7 +45,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (tr.position.y <= 1.5f)
+        if (tr.position.y <= 1.395f)
         {
             isJumping = false;
         }
@@ -83,7 +83,7 @@ public class PlayerMove : MonoBehaviour
     public void jump()
     {
         isJumping = true;
-        rb.AddForce(new Vector3(0.0f, 40.0f, 0.0f), ForceMode.Impulse); //rb.AddForce(new Vector3(0.0f, 750.0f, 0.0f), ForceMode.Force);
+        rb.AddForce(new Vector3(0.0f, 35.0f, 0.0f), ForceMode.Impulse); //rb.AddForce(new Vector3(0.0f, 750.0f, 0.0f), ForceMode.Force);
     }
 
     public void killPlayer()
@@ -127,13 +127,13 @@ public class PlayerMove : MonoBehaviour
         }
         else if (accelerated)
         {
-            if (speed.z > NORMAL_SPEED) speed.z -= 35.0f * Time.deltaTime;
+            if (speed.z > NORMAL_SPEED) speed.z -= NORMAL_SPEED * 0.5f * Time.deltaTime;
             if (speed.z <= NORMAL_SPEED) accelerated = false;
 
         }
         else if (slowed)
         {
-            if (speed.z < NORMAL_SPEED) speed.z += 5.0f * Time.deltaTime;
+            if (speed.z < NORMAL_SPEED) speed.z += NORMAL_SPEED* 0.5f * Time.deltaTime;
             if (speed.z >= NORMAL_SPEED) slowed = false;
         }
         else
