@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpingTile : MonoBehaviour
 {
-
+    private GameObject ball;
     private bool jump = false;
     private bool retracted = false;
     private float jumpSpeed = 7;//8;
@@ -15,8 +15,9 @@ public class JumpingTile : MonoBehaviour
     void Start()
     {
         restPosition = this.transform.position;
-        retractPosition = restPosition - new Vector3(0.0f, 0.5f, 0.0f);
-        activatedPosition = restPosition + new Vector3(0.0f, 3.0f, 0.0f);
+        retractPosition = restPosition - new Vector3(0.0f, 0.15f, 0.0f);
+        activatedPosition = restPosition + new Vector3(0.0f, 2.0f, 0.0f);
+        ball = GameObject.Find("Ball");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +53,6 @@ public class JumpingTile : MonoBehaviour
         if (this.transform.position == retractPosition) retracted = false;
         else if (this.transform.position.y >= activatedPosition.y-1.75)
         {
-            //GameObject.Find("Ball").GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, 0.0f));
             jump = false;
         }
 
@@ -67,12 +67,14 @@ public class JumpingTile : MonoBehaviour
         {
             this.transform.position = Vector3.Lerp(this.transform.position,
                 activatedPosition, Time.deltaTime * jumpSpeed);
+            ball.GetComponent<PlayerMove>().jump();
         }
-        
+
         if (this.transform.position != restPosition && !jump && !retracted)
         {
             this.transform.position = Vector3.Lerp(this.transform.position,
                 restPosition, Time.deltaTime * jumpSpeed);
+            ball.GetComponent<PlayerMove>().jump();
         }
     }
 }
