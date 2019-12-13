@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelCtl : MonoBehaviour
 {
-    
+    private System.Random rand;
     public string path = "/LevelMap/Level1.txt";//"/Scripts/LevelMap/test_0.txt";
     public GameObject cam;
-
+    
 
     public List<GameObject> tiles;
     public List<GameObject> obstacles;
@@ -22,6 +22,7 @@ public class LevelCtl : MonoBehaviour
 
     void Start()
     {
+        rand = new System.Random();
         int nivell = SceneManager.GetActiveScene().buildIndex;
         String levelpath = "/LevelMap/Level" + nivell.ToString() + ".txt";
         this.transform.SetPositionAndRotation(new Vector3(0.0f,0.0f,0.0f), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
@@ -40,7 +41,7 @@ public class LevelCtl : MonoBehaviour
         }
         GameObject myTile = null;
         //Carrego els tiles disponibles
-        for (int it = 0; it < 5*3 ; it++)
+        for (int it = 0; it < 99 ; it++)
         {
             //find returns null if it couldn't find the obstacle
             myTile = GameObject.Find("Tile_" + it.ToString());
@@ -50,7 +51,7 @@ public class LevelCtl : MonoBehaviour
         //Carrego els obstacles disponibles
         GameObject myObstacle = new GameObject();
         //5 tiles diferents per cada nivell
-        for (int it = 0; it < 6*3; it++)
+        for (int it = 0; it < 99; it++)
         {
             //find returns null if it couldn't find the obstacle
             myObstacle = GameObject.Find("Obstacle_" + it.ToString());
@@ -74,17 +75,25 @@ public class LevelCtl : MonoBehaviour
                     int tile_id = level[currentRow][j][0] - '0';
                     if (tile_id != 0)
                     {
-                        GameObject obj = (GameObject)Instantiate(tiles[tile_id-1], 
-                            new Vector3(level[currentRow].Length/(-2.0f)+j, 1,
-                            currentRow), transform.rotation);
+                        GameObject obj = null;
+                        if (tile_id == 1)
+                        {
+                            int variant = rand.Next(6);
+
+                        }
+                        else
+                        {
+                            obj = (GameObject)Instantiate(tiles[tile_id - 1],
+                                new Vector3(level[currentRow].Length / (-2.0f) + j, 1,
+                                currentRow), transform.rotation);
+                        }
                         obj.transform.parent = transform;
                         objOnScreen.Add(obj);
                         //per carregar l'obstacle del tile
                         if (level[currentRow][j].Length > 2 && level[currentRow][j][1] == '.')
                         {
-                            Debug.Log("M'han usat, yay!");
                             int obs_id = level[currentRow][j][2] - '0';
-                            GameObject obs = (GameObject)Instantiate(obstacles[obs_id - 1], 
+                            GameObject obs = (GameObject)Instantiate(obstacles[obs_id - 1]., 
                                 new Vector3(level[currentRow].Length / (-2.0f) + j, 3.0f, currentRow), 
                                 transform.rotation);
                             obs.transform.parent = transform;
