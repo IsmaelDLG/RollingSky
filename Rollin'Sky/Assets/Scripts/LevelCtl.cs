@@ -116,7 +116,7 @@ public class LevelCtl : MonoBehaviour
                         {
                             int obs_id = level[currentRow][j][2] - '0';
                             GameObject obs = (GameObject)Instantiate(obstacles[obs_id - 1], 
-                                new Vector3(level[currentRow].Length / (-2.0f) + j, 3.0f, currentRow), 
+                                new Vector3(level[currentRow].Length / (-2.0f) + j, 2f, currentRow), 
                                 transform.rotation);
                             obs.transform.parent = transform;
 
