@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -397,6 +397,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1035462639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4211613547095759941, guid: f728af510d702eb4c8fd929abafbb739,
+    type: 3}
+  m_PrefabInstance: {fileID: 4211613546461220320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857662620
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +927,7 @@ PrefabInstance:
     - target: {fileID: 4211613547095523429, guid: f728af510d702eb4c8fd929abafbb739,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4211613547095523429, guid: f728af510d702eb4c8fd929abafbb739,
         type: 3}
@@ -1154,6 +1160,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3488768639145217684, guid: 24f4c3c6079943a41a36223df87abf92,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1035462639}
     - target: {fileID: 7409207851513892482, guid: 24f4c3c6079943a41a36223df87abf92,
         type: 3}
       propertyPath: m_Name
@@ -1162,7 +1173,7 @@ PrefabInstance:
     - target: {fileID: 7409207851513729698, guid: 24f4c3c6079943a41a36223df87abf92,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7409207851513729698, guid: 24f4c3c6079943a41a36223df87abf92,
         type: 3}
