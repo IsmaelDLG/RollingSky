@@ -47,6 +47,11 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (godMode)
+        {
+            if (tr.position.y <= 1.395f)
+                tr.position.Set(tr.position.x, 1.395f, tr.position.y);
+        }
         if (tr.position.y <= 1.395f)
         {
             isJumping = false;
@@ -54,11 +59,6 @@ public class PlayerMove : MonoBehaviour
         stillAlive();
         //Acceleració constant fins arribar al limit
         accelerateZ();
-        if (godMode)
-        {
-            if (tr.position.y <= 1.395f)
-                tr.position.Set(tr.position.x,1.395f,tr.position.y);
-        }
         
         //Calcul de vel en eix x
         if (Input.GetKey(KeyCode.RightArrow))
