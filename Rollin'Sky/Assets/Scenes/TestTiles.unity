@@ -725,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 7287962663674390096, guid: c9ab0bf813d2bd0449ac6886168797c1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23
+      value: 0.992
       objectReference: {fileID: 0}
     - target: {fileID: 7287962663674390096, guid: c9ab0bf813d2bd0449ac6886168797c1,
         type: 3}
@@ -1160,16 +1160,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3488768639145217684, guid: 24f4c3c6079943a41a36223df87abf92,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 1035462639}
     - target: {fileID: 7409207851513892482, guid: 24f4c3c6079943a41a36223df87abf92,
         type: 3}
       propertyPath: m_Name
       value: Obstacle_3
       objectReference: {fileID: 0}
+    - target: {fileID: 3488768639145217684, guid: 24f4c3c6079943a41a36223df87abf92,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1035462639}
     - target: {fileID: 7409207851513729698, guid: 24f4c3c6079943a41a36223df87abf92,
         type: 3}
       propertyPath: m_RootOrder
