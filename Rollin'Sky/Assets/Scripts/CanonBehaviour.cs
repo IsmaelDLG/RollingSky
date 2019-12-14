@@ -20,7 +20,7 @@ public class CanonBehaviour : MonoBehaviour
     {
         position = this.transform.position;
         shootPosition = new Vector3 (position.x, position.y, position.z);
-        if (reload == 3.0f)
+        if (reload >= 3.0f)
         {
             Debug.Log("shooting");
             GameObject obj = (GameObject)Instantiate(bullet, transform.position + new Vector3(1.0f, 0.0f, 0.0f), transform.rotation);
