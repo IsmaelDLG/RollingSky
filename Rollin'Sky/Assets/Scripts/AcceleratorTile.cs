@@ -15,7 +15,6 @@ public class AcceleratorTile : MonoBehaviour
         if (other.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerMove>().accelerate();
-            Debug.Log("Collider activated");
         }
     }
 }

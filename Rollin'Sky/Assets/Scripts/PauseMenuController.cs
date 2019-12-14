@@ -7,6 +7,8 @@ public class PauseMenuController : MonoBehaviour
 {
     public static bool IsPaused = false;
     public GameObject pauseUI;
+    public GameObject player;
+    public GameObject toggle;
 
     // Update is called once per frame
     void Update()
@@ -48,5 +50,10 @@ public class PauseMenuController : MonoBehaviour
     {
         Debug.Log("Exit Completed");
         Application.Quit();
+    }
+
+    public void activateGod(bool state)
+    {
+        player.GetComponent<PlayerMove>().changeMode(state);
     }
 }

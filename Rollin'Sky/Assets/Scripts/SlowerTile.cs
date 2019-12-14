@@ -15,7 +15,6 @@ public class SlowerTile : MonoBehaviour
         if (other.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerMove>().slow();
-            Debug.Log("Collider activated");
         }
     }
 }

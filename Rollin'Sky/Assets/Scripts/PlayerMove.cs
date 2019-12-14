@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     public bool slowed = false;
     public bool isDead = false;
     public bool isJumping = false;
+    public bool godMode = false;
     private string element = "none";
 
     private Rigidbody rb;
@@ -33,6 +34,7 @@ public class PlayerMove : MonoBehaviour
         accelerated = false;
         slowed = false;
         isDead = false;
+        godMode = false;
     //Inicialitzo aquests components
     //tr.Rotate(new Vector3(0, 90, 0));
         tr.SetPositionAndRotation(new Vector3(0, 1.4f, 1),new Quaternion(0,0,0,0)) ;
@@ -52,6 +54,11 @@ public class PlayerMove : MonoBehaviour
         stillAlive();
         //Acceleració constant fins arribar al limit
         accelerateZ();
+        if (godMode)
+        {
+            if (tr.position.y < 1.395f)
+                tr.position.Set(tr.position.x,1.395f,tr.position.y);
+        }
         
         //Calcul de vel en eix x
         if (Input.GetKey(KeyCode.RightArrow))
@@ -88,7 +95,10 @@ public class PlayerMove : MonoBehaviour
 
     public void killPlayer()
     {
-        isDead = true;
+        if (!godMode)
+        {
+            isDead = true;
+        }
     }
 
     public void accelerate()
@@ -100,7 +110,7 @@ public class PlayerMove : MonoBehaviour
     public void slow()
     {
         slowed = true;
-        speed.z = MIN_SPEED;
+        speed.z = MIN_SPEED/2f;
     }
 
     public void changeElement(string elem)
@@ -162,6 +172,11 @@ public class PlayerMove : MonoBehaviour
     {
         if (x < 0) return (x * -1.0f);
         return x;
+    }
+
+    public void changeMode(bool mode)
+    {
+        godMode = mode;
     }
 
     //My methods

@@ -24,7 +24,7 @@ public class FallingTile : MonoBehaviour
     {
         if (startFalling)
         {
-            this.transform.Translate(new Vector3(0.0f, -0.05f, 0.0f));
+            this.transform.Translate(new Vector3(0.0f, -0.015f, 0.0f));
         }
     }
 }
