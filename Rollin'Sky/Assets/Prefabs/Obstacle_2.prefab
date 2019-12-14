@@ -55,7 +55,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 2
+    scalar: 3
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -4770,6 +4770,8 @@ GameObject:
   - component: {fileID: 7559660389834712875}
   - component: {fileID: 7559660388470018081}
   - component: {fileID: 7559660388470018084}
+  - component: {fileID: 342847859243496444}
+  - component: {fileID: 2294535682880980843}
   m_Layer: 0
   m_Name: Obstacle_2
   m_TagString: Untagged
@@ -4884,8 +4886,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.015583146, y: 0.015504197, z: 0.0018510523}
-  m_Center: {x: 0.000041346997, y: 0.000027852127, z: 0.0009478802}
+  m_Size: {x: 0.015650922, y: 0.0020121145, z: 0.015484695}
+  m_Center: {x: 0.000050276518, y: 0.00085689215, z: -0.00009227752}
+--- !u!65 &342847859243496444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559660389825320171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009819244, y: 0.018542336, z: 0.010340729}
+  m_Center: {x: 0.000041348037, y: 0.009293524, z: -0.00008789062}
+--- !u!114 &2294535682880980843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559660389825320171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce81c5499f41744b97af742054f7c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  erupting: 0
 --- !u!1 &8363530297694828234
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,7 +4954,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8363530297694828234}
   serializedVersion: 6
-  lengthInSec: 2
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0

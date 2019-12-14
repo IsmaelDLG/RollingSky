@@ -56,7 +56,7 @@ public class PlayerMove : MonoBehaviour
         accelerateZ();
         if (godMode)
         {
-            if (tr.position.y < 1.395f)
+            if (tr.position.y <= 1.395f)
                 tr.position.Set(tr.position.x,1.395f,tr.position.y);
         }
         
@@ -84,6 +84,7 @@ public class PlayerMove : MonoBehaviour
                 rb.AddForce(speed, ForceMode.Force);
             }
         }
+        Debug.Log("Actual speed: " + isJumping);
 
     }
 
@@ -149,7 +150,7 @@ public class PlayerMove : MonoBehaviour
         else
         {
             //Calcul de velocitat puntual en l'eix z (v + v*a);
-            speed.z += 3.0f * Time.deltaTime;
+            speed.z += NORMAL_SPEED; //* 0.75f * Time.deltaTime;
 
             //Ajustament de velocitat en eix z
             if (speed.z > NORMAL_SPEED) speed.z = NORMAL_SPEED;
