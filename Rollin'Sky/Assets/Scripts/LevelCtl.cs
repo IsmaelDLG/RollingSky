@@ -78,9 +78,9 @@ public class LevelCtl : MonoBehaviour
         if (currentRow < level.Length)
         {
             while (inViewRange(currentRow)) {
-                for (int j = 0; j < 11; j++)
+                for (int j = 0; j < level[currentRow].Length; j++)
                 {
-                    //crate tile
+                    //create tile
                     int tile_id = level[currentRow][j][0] - '0';
                     if (tile_id != 0)
                     {
