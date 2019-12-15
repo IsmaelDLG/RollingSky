@@ -27,10 +27,13 @@ ModelImporter:
     400020: Ball_Mesh
     2100000: No Name
     2100002: Material
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Sphere
     4300002: Ball_Mesh
     7400000: Armature|Jump
     7400002: Armature|Roll
+    7400004: Ball_Mesh|Roll
     9500000: //RootNode
     13700000: Sphere
     13700002: Ball_Mesh

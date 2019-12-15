@@ -11,7 +11,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         if(!(Time.timeScale == 0))
         {
-            this.transform.Translate(new Vector3(0.025f, 0.0f, 0.0f));
+            this.transform.Translate(new Vector3(0.05f, 0.0f, 0.0f));
         }
     }
 
