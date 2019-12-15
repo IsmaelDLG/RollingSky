@@ -11,7 +11,7 @@ public class HammerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(new Vector3(0, 5, 0));
+        this.transform.Rotate(new Vector3(0, 5*Time.deltaTime, 0));
     }
 
     private void OnTriggerEnter(Collider other)

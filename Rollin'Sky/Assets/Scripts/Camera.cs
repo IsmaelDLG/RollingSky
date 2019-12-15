@@ -7,6 +7,7 @@ public class Camera : MonoBehaviour
 {
     private Transform tr;
     private GameObject pc;
+    private GameObject bg;
 
     // Start is called before the first frame update
     public void Start()
@@ -18,13 +19,18 @@ public class Camera : MonoBehaviour
         pc = GameObject.Find("Ball");
         //get components
 
-        tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position),tr.rotation);  
+        bg = GameObject.Find("Background");
+
+        tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position),tr.rotation);
+        Screen.SetResolution(510, 680, false);
+        //bg = (GameObject)Instantiate(bg);
     }
 
     // Update is called once per frame
     public void Update()
     {
         tr.SetPositionAndRotation(this.watchPlayer(pc.transform.position), tr.rotation);
+        bg.transform.SetPositionAndRotation(tr.position+new Vector3(0f,-7.25f,18f),bg.transform.rotation);
     }
 
     //My methods
