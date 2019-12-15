@@ -9409,6 +9409,8 @@ GameObject:
   - component: {fileID: 8494584915225188201}
   - component: {fileID: 8494584913966520814}
   - component: {fileID: 8494584913966520815}
+  - component: {fileID: 3295012508599874894}
+  - component: {fileID: 7454511041722064904}
   m_Layer: 0
   m_Name: Obstacle_4
   m_TagString: Untagged
@@ -9507,6 +9509,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011385208, y: 0.002304774, z: 0.00039813644}
   m_Center: {x: 0, y: 0.0000031989068, z: -0.008092424}
+--- !u!65 &3295012508599874894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494584915222923689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011385208, y: 0.0007658214, z: 0.017517656}
+  m_Center: {x: 0, y: 0.0000000010477377, z: 0}
+--- !u!114 &7454511041722064904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494584915222923689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4743b96d567cc4c44b2af91e49cc1ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8718698190154780601
 GameObject:
   m_ObjectHideFlags: 0

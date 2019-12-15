@@ -13,7 +13,7 @@ public class ElementTile : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerMove>().changeElement("grass");
+            other.gameObject.GetComponent<PlayerMove>().changeElement("lava");
         }
     }
 

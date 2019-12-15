@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     public bool isDead = false;
     public bool isJumping = false;
     public bool godMode = false;
-    private string element = "none";
+    public string element = "none";
 
     private Rigidbody rb;
     private Transform tr;
