@@ -24,17 +24,19 @@ public class FallingTile : MonoBehaviour
     {
         if (startFalling)
         {
-            if(GameObject.Find("Ball").GetComponent<PlayerMove>().accelerated)
-            {
-                this.transform.Translate(new Vector3(0.0f, -0.009f, 0.0f));
-            }
-            else if(GameObject.Find("Ball").GetComponent<PlayerMove>().slowed)
-            {
-                this.transform.Translate(new Vector3(0.0f, -0.025f, 0.0f));
-            }
-            else
-            {
-                this.transform.Translate(new Vector3(0.0f, -0.006f, 0.0f));
+            if (Time.timeScale != 0){
+                if (GameObject.Find("Ball").GetComponent<PlayerMove>().accelerated)
+                {
+                    this.transform.Translate(new Vector3(0.0f, -0.009f, 0.0f));
+                }
+                else if (GameObject.Find("Ball").GetComponent<PlayerMove>().slowed)
+                {
+                    this.transform.Translate(new Vector3(0.0f, -0.025f, 0.0f));
+                }
+                else
+                {
+                    this.transform.Translate(new Vector3(0.0f, -0.006f, 0.0f));
+                }
             }
         }
     }
