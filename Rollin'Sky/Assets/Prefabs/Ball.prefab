@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 27717787205464461}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,6 +370,8 @@ MonoBehaviour:
   accelerated: 0
   slowed: 0
   isDead: 0
+  isJumping: 0
+  godMode: 0
 --- !u!1 &27717787739792700
 GameObject:
   m_ObjectHideFlags: 0
