@@ -16,6 +16,7 @@ public class PlayerMove : MonoBehaviour
     public bool isJumping = false;
     public bool godMode = false;
     public string element = "none";
+    private float elementDuration = 5.0f;
 
     private Rigidbody rb;
     private Transform tr;
@@ -52,6 +53,15 @@ public class PlayerMove : MonoBehaviour
             if (tr.position.y <= 1.395f)
                 tr.position.Set(tr.position.x, 1.395f, tr.position.y);
         }
+        if(element != "none")
+        {
+            elementDuration -= Time.deltaTime;
+            if (elementDuration <= 0)
+            {
+                element = "none";
+                elementDuration = 5.0f;
+            }
+        }
         if (tr.position.y <= 1.395f)
         {
             isJumping = false;
@@ -84,7 +94,7 @@ public class PlayerMove : MonoBehaviour
                 rb.AddForce(speed, ForceMode.Force);
             }
         }
-        Debug.Log("Actual speed: " + isJumping);
+        Debug.Log(element);
 
     }
 
