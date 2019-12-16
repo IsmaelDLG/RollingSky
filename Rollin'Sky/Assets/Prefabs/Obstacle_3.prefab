@@ -121,3 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1f53b9d1dbedd45846ebf8a0202d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  shootPosition: {x: 0, y: 0, z: 0}
+  bullet: {fileID: 0}

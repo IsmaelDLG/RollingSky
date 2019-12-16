@@ -115,9 +115,19 @@ public class LevelCtl : MonoBehaviour
                         if (level[currentRow][j].Length > 2 && level[currentRow][j][1] == '.')
                         {
                             int obs_id = level[currentRow][j][2] - '0';
-                            GameObject obs = (GameObject)Instantiate(obstacles[obs_id - 1], 
-                                new Vector3(level[currentRow].Length / (-2.0f) + j, 2f, currentRow), 
+                            GameObject obs;
+                            if (obs_id == 4)
+                            {                                
+                                obs = (GameObject)Instantiate(obstacles[obs_id - 1],
+                                new Vector3(level[currentRow].Length / (-2.0f) + j, 2f, currentRow),
+                                new Quaternion (transform.rotation.x, -1.0f, transform.rotation.z, transform.rotation.w));
+                            }
+                            else
+                            {
+                                obs = (GameObject)Instantiate(obstacles[obs_id - 1],
+                                new Vector3(level[currentRow].Length / (-2.0f) + j, 2f, currentRow),
                                 transform.rotation);
+                            }
                             obs.transform.parent = transform;
 
                             objOnScreen.Add(obs);

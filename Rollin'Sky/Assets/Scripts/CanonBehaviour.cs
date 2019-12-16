@@ -23,7 +23,7 @@ public class CanonBehaviour : MonoBehaviour
         if (reload >= 3.0f)
         {
             Debug.Log("shooting");
-            GameObject obj = (GameObject)Instantiate(bullet, transform.position + new Vector3(1.0f, 0.0f, 0.0f), transform.rotation);
+            GameObject obj = (GameObject)Instantiate(bullet, transform.position + new Vector3(0.25f, 0.0f, 0.0f), transform.rotation);
             reload = 0.0f;
         }
         reload += Time.deltaTime;
