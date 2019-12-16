@@ -478,6 +478,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 365.201
       objectReference: {fileID: 0}
+    - target: {fileID: 27717787205464461, guid: 7de7f29642ccfe243972d7cf97f3d9d7,
+        type: 3}
+      propertyPath: elemPS
+      value: 
+      objectReference: {fileID: 623510516}
     - target: {fileID: 27717787205464466, guid: 7de7f29642ccfe243972d7cf97f3d9d7,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -1487,6 +1492,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527963315}
   m_CullTransparentMesh: 0
+--- !u!198 &623510516 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1548467348575330214, guid: 7de7f29642ccfe243972d7cf97f3d9d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 187280274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &723790723
 GameObject:
   m_ObjectHideFlags: 0

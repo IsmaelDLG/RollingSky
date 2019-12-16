@@ -12,6 +12,7 @@ public class GateBehaviour : MonoBehaviour
             {
                 other.gameObject.GetComponent<PlayerMove>().killPlayer();
             }
+            else other.gameObject.GetComponent<PlayerMove>().changeElement("none");
         }
     }
 }

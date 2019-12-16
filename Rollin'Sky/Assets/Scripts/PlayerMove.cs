@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     public const float NORMAL_SPEED = 55.0f;
     public const float MIN_SPEED = NORMAL_SPEED/2.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
+    public ParticleSystem elemPS;
 
     public bool accelerated = false;
     public bool slowed = false;
@@ -127,6 +128,8 @@ public class PlayerMove : MonoBehaviour
     public void changeElement(string elem)
     {
         element = elem;
+        if (element != "none") elemPS.Play();
+        else elemPS.Stop();
     }
 
     public void stillAlive()
