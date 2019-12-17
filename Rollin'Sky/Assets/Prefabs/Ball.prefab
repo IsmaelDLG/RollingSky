@@ -280,7 +280,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27717787740223770}
-  - component: {fileID: 27717787747210994}
   - component: {fileID: 27717787205464466}
   - component: {fileID: 27717787205464467}
   - component: {fileID: 27717787205464461}
@@ -308,25 +307,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &27717787747210994
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27717787739792698}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 5cef9e1797a3d4b41acd0706623aae53, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &27717787205464466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -368,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f365cf9b70d937b419b55fb2ad520592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elemPS: {fileID: 0}
   accelerated: 0
   slowed: 0
   isDead: 0

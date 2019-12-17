@@ -4,13 +4,23 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cube
+    100004: Sphere
     400000: //RootNode
+    400002: Cube
+    400004: Sphere
     2100000: No Name
     2100002: Material.001
+    2100004: Material
     2300000: //RootNode
+    2300002: Cube
+    2300004: Sphere
     3300000: //RootNode
+    3300002: Cube
+    3300004: Sphere
     4300000: Cannon
     4300002: Sphere
+    4300004: Cube
   externalObjects: {}
   materials:
     importMaterials: 1
