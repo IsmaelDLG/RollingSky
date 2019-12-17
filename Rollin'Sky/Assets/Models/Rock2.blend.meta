@@ -6,17 +6,23 @@ ModelImporter:
     100000: //RootNode
     100002: Cube
     100004: Spot
+    100006: Cube.001
     400000: //RootNode
     400002: Cube
     400004: Spot
+    400006: Cube.001
     2100000: Material.001
     2100002: Material
+    2100004: No Name
     2300000: //RootNode
     2300002: Cube
+    2300004: Cube.001
     3300000: //RootNode
     3300002: Cube
+    3300004: Cube.001
     4300000: Rock
     4300002: Cube
+    4300004: Cube.001
     10800000: Spot
     2186277476908879412: ImportLogs
   externalObjects: {}
