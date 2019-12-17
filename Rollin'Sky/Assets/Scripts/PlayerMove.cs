@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     public const float LONG = 2 * 3.14159f * 0.25f;
     public ParticleSystem elemPS;
 
+    public bool firstTimeDead = true;
     public bool accelerated = false;
     public bool slowed = false;
     public bool isDead = false;
@@ -37,6 +38,7 @@ public class PlayerMove : MonoBehaviour
         slowed = false;
         isDead = false;
         godMode = false;
+        firstTimeDead = true;
     //Inicialitzo aquests components
     //tr.Rotate(new Vector3(0, 90, 0));
         tr.SetPositionAndRotation(new Vector3(0, 1.4f, 1),new Quaternion(0,0,0,0)) ;
@@ -49,44 +51,59 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (godMode)
+        if (!isDead)
         {
+
+            if (godMode)
+            {
+                if (tr.position.y <= 1.395f)
+                    tr.position.Set(tr.position.x, 1.395f, tr.position.y);
+            }
             if (tr.position.y <= 1.395f)
-                tr.position.Set(tr.position.x, 1.395f, tr.position.y);
-        }
-        if (tr.position.y <= 1.395f)
-        {
-            isJumping = false;
-        }
-        stillAlive();
-        //Acceleració constant fins arribar al limit
-        accelerateZ();
-        
-        //Calcul de vel en eix x
-        if (Input.GetKey(KeyCode.RightArrow))
-            this.accelerateX(1.0f);
-        else if (Input.GetKey(KeyCode.LeftArrow)) 
-            this.accelerateX(-1.0f);
-        else //Volem seguir rectes
-        {
-            //Contrarrestem la força actual
-            if (rb.velocity.x != 0)
             {
-                speed.x = rb.velocity.x * (-1.0f);
+                isJumping = false;
             }
-        }
-        //Afegim la força al player.
-        if (Time.timeScale != 0)
-        {
-            if (isJumping)
+            stillAlive();
+            //Acceleració constant fins arribar al limit
+            accelerateZ();
+
+            //Calcul de vel en eix x
+            if (Input.GetKey(KeyCode.RightArrow))
+                this.accelerateX(1.0f);
+            else if (Input.GetKey(KeyCode.LeftArrow))
+                this.accelerateX(-1.0f);
+            else //Volem seguir rectes
             {
-                rb.AddForce(speed.x, speed.y, 0f, ForceMode.Force);
-            } else
-            {
-                rb.AddForce(speed, ForceMode.Force);
+                //Contrarrestem la força actual
+                if (rb.velocity.x != 0)
+                {
+                    speed.x = rb.velocity.x * (-1.0f);
+                }
             }
+            //Afegim la força al player.
+            if (Time.timeScale != 0)
+            {
+                if (isJumping)
+                {
+                    rb.AddForce(speed.x, speed.y, 0f, ForceMode.Force);
+                }
+                else
+                {
+                    rb.AddForce(speed, ForceMode.Force);
+                }
+            }
+            Debug.Log(isJumping);
         }
-        Debug.Log(isJumping);
+        else
+        {
+            this.GetComponent<Rigidbody>().drag = 1000000000;
+            /*if (firstTimeDead)
+            {
+                accelerateZ();
+                rb.AddForce(-speed.x, -speed.y, -speed.z, ForceMode.Force);
+                firstTimeDead = false;
+            }*/
+        }
     }
 
     public void jump()
