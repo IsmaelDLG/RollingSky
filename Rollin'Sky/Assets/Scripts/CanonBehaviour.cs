@@ -20,11 +20,12 @@ public class CanonBehaviour : MonoBehaviour
     {
         position = this.transform.position;
         shootPosition = new Vector3 (position.x, position.y, position.z);
-        if (reload >= 3.0f)
+        if (reload >= 1.5f)
         {
             Debug.Log("shooting");
             GameObject obj = (GameObject)Instantiate(bullet, transform.position + new Vector3(0.25f, 0.0f, 0.0f), transform.rotation);
             reload = 0.0f;
+            this.GetComponent<AudioSource>().Play();
         }
         reload += Time.deltaTime;
     }

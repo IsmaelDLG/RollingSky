@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
+  m_Name: AssetReferenceDB
+  m_EditorClassIdentifier: 
+  m_assets:
+  - m_assetDatabaseId: e70a17b45140cab4bb3bc07a1e62a54c
+    m_importFrom: Assets/Scripts/MusciManager.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d5b74413061009744ab4548bb6ce7ff4
+    m_importFrom: Assets/Scenes/Level2.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d513e76658e217d4ca6d90ea3f248663
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4e34a06eeebbcc243833c2bb7f3881d9
+    m_importFrom: Assets/Prefabs/Obstacle_2 1.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a71c58e0a8dbd77438d8b8a80a1498fe
+    m_importFrom: Assets/Scenes/Level1.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 16ffa51cc4cc51d48ba412315c1fdb00
+    m_importFrom: Assets/Scenes/Level3.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2ea9e1573af11714c84e515b5c187665
+    m_importFrom: Assets/Prefabs/Obstacle_2.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0000000000000000a100000000000000
+    m_importFrom: ProjectSettings/UnityConnectSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  m_version: 2

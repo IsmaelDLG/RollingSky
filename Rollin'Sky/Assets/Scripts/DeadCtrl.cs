@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeadCtrl : MonoBehaviour
 {
-
+    private float timer;
     private GameObject player;
     public GameObject deathUI;
     public static bool deathMenuActive;
@@ -14,6 +14,7 @@ public class DeadCtrl : MonoBehaviour
     {
         player = GameObject.Find("Ball");
         deathMenuActive = false;
+        timer = 1.0f;
     }
 
     // Update is called once per frame
@@ -21,9 +22,16 @@ public class DeadCtrl : MonoBehaviour
     {
         if(player.GetComponent<PlayerMove>().isDead)
         {
-            Time.timeScale = 0f;
-            deathUI.SetActive(true);
-            deathMenuActive = true;
+            if (timer <= 0)
+            {
+                Time.timeScale = 0f;
+                deathUI.SetActive(true);
+                deathMenuActive = true;
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+            }
         }
     }
 

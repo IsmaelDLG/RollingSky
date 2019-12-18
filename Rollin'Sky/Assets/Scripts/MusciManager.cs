@@ -15,20 +15,20 @@ public class MusciManager : MonoBehaviour
     {
         if (PauseMenuController.IsPaused)
         {
-            this.GetComponent<AudioSource>().volume = 0.005f;
+            this.GetComponent<AudioSource>().volume = 0.25f;
         }
         else
         {
-            this.GetComponent<AudioSource>().volume = 0.025f;
+            this.GetComponent<AudioSource>().volume = 0.5f;
         }
 
         if (DeadCtrl.deathMenuActive)
         {
-            this.GetComponent<AudioSource>().volume = 0.0025f;
+            this.GetComponent<AudioSource>().volume = 0.25f;
         }
         else
         {
-            this.GetComponent<AudioSource>().volume = 0.025f;
+            this.GetComponent<AudioSource>().volume = 0.5f;
         }
     }
 }

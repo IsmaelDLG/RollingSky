@@ -119,7 +119,7 @@ public class LevelCtl : MonoBehaviour
                             if (obs_id == 4)
                             {                                
                                 obs = (GameObject)Instantiate(obstacles[obs_id - 1],
-                                new Vector3(level[currentRow].Length / (-2.0f) + j, 1.5f, currentRow),
+                                new Vector3(level[currentRow].Length / (-2.0f) + j, 2f, currentRow),
                                 new Quaternion (transform.rotation.x, -1.0f, transform.rotation.z, transform.rotation.w));
                             }
                             else

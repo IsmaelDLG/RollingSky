@@ -72,7 +72,7 @@ public class Camera : MonoBehaviour
             if (UnityEngine.Camera.main.fieldOfView < iniFOV) UnityEngine.Camera.main.fieldOfView += stepFOV;
             else if (UnityEngine.Camera.main.fieldOfView > iniFOV) UnityEngine.Camera.main.fieldOfView -= stepFOV;
         }
-        return new Vector3(playerPos.x, 0.0f, playerPos.z) + new Vector3(0.0f, 4.0f, -4.5f);
+        return new Vector3(playerPos.x, 0.0f, playerPos.z) + new Vector3(0.0f, 4.0f, -5.5f);
     }
 
 }
