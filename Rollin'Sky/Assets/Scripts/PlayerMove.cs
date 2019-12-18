@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     public const float MIN_SPEED = NORMAL_SPEED/2.0f;
     public const float LONG = 2 * 3.14159f * 0.25f;
     public ParticleSystem elemPS;
+    public ParticleSystem groundPS;
 
     public bool accelerated = false;
     public bool slowed = false;
@@ -43,7 +44,7 @@ public class PlayerMove : MonoBehaviour
 
         //Velocitat inicial
         speed = new Vector3(0.0f, 0.0f, NORMAL_SPEED);
-
+        groundPS.Play();
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class PlayerMove : MonoBehaviour
             if (tr.position.y <= 1.395f)
                 tr.position.Set(tr.position.x, 1.395f, tr.position.y);
         }
-        if (tr.position.y <= 1.395f)
+        if (tr.position.y <= 1.45f)
         {
             isJumping = false;
         }
@@ -86,7 +87,6 @@ public class PlayerMove : MonoBehaviour
                 rb.AddForce(speed, ForceMode.Force);
             }
         }
-        Debug.Log(isJumping);
     }
 
     public void jump()
@@ -141,13 +141,13 @@ public class PlayerMove : MonoBehaviour
         }
         else if (accelerated)
         {
-            if (speed.z > NORMAL_SPEED) speed.z -= NORMAL_SPEED * 0.5f * Time.deltaTime;
+            if (speed.z > NORMAL_SPEED) speed.z -= NORMAL_SPEED * 0.25f * Time.deltaTime;
             if (speed.z <= NORMAL_SPEED) accelerated = false;
 
         }
         else if (slowed)
         {
-            if (speed.z < NORMAL_SPEED) speed.z += NORMAL_SPEED* 0.5f * Time.deltaTime;
+            if (speed.z < NORMAL_SPEED) speed.z += NORMAL_SPEED* 0.25f * Time.deltaTime;
             if (speed.z >= NORMAL_SPEED) slowed = false;
         }
         else

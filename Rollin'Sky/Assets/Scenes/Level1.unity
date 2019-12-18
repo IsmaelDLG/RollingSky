@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2068,21 +2068,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 910767670323331156, guid: acba5863425aa5a43b1fa5d83e4b990a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 910767670323331156, guid: acba5863425aa5a43b1fa5d83e4b990a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.000015258789
-      objectReference: {fileID: 0}
-    - target: {fileID: 910767670323331156, guid: acba5863425aa5a43b1fa5d83e4b990a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.000015258789
-      objectReference: {fileID: 0}
     - target: {fileID: 5724224169996903639, guid: acba5863425aa5a43b1fa5d83e4b990a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2500,6 +2485,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 365.201
       objectReference: {fileID: 0}
+    - target: {fileID: 27717787205464461, guid: 7de7f29642ccfe243972d7cf97f3d9d7,
+        type: 3}
+      propertyPath: elemPS
+      value: 
+      objectReference: {fileID: 2146866102}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de7f29642ccfe243972d7cf97f3d9d7, type: 3}
 --- !u!1 &1421409456
@@ -4000,7 +3990,8 @@ PrefabInstance:
       propertyPath: pc
       value: 
       objectReference: {fileID: 1943243755}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4846843223422084702, guid: f5cbe5ec390f69442af76ceb87ef696c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5cbe5ec390f69442af76ceb87ef696c, type: 3}
 --- !u!1 &1943243755 stripped
 GameObject:
@@ -4511,6 +4502,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1427777701658503730, guid: f5cbe5ec390f69442af76ceb87ef696c,
     type: 3}
   m_PrefabInstance: {fileID: 1939093434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2146866102 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1548467348575330214, guid: 7de7f29642ccfe243972d7cf97f3d9d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1420270962}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1317564288809196049
 PrefabInstance:
